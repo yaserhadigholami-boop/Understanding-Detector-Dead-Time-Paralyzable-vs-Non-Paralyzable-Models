@@ -124,11 +124,10 @@ incoming_p, detected_p = build_trace(arrivals, acc_p)
 # ---------------------------------------------
 # Plot
 # ---------------------------------------------
-fig = plt.figure(figsize=(10,8))
-
-ax1 = fig.add_subplot(311)
-ax2 = fig.add_subplot(312)
-ax3 = fig.add_subplot(313)
+fig, (ax1, ax2, ax3) = plt.subplots(
+    3, 1, figsize=(10, 10),
+    gridspec_kw={'height_ratios': [1, 1, 1], 'hspace': 0.45}
+)
 
 # Non-paralyzable
 for s,e in win_np:
